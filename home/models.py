@@ -16,7 +16,7 @@ class Contact(models.Model):
         ordering = ['-time']
 
 services = {
-    ("Graphic Des","Graphic Designing"),
+    ("Graphic Designing","Graphic Designing"),
     ("Web development","Web development"),
     ("Marketing","Marketing"),
     ("SEO","SEO"),
@@ -28,7 +28,8 @@ services = {
 class Portfolio(models.Model):
     service_type = models.CharField(choices=services,max_length=100)
     project_name = models.CharField(max_length=50)
-    project_image = models.ImageField(validators=[validate_image_file_extension])
+    project_image = models.ImageField(upload_to='Porfolio-Images',validators=[validate_image_file_extension])
+    project_link = models.URLField(blank=True,null=True)
     project_desc = models.CharField(max_length=150)
     time = models.DateTimeField(auto_now_add=True)
 
@@ -37,3 +38,26 @@ class Portfolio(models.Model):
 
     class Meta:
         ordering = ['-time']
+
+class Testimonial(models.Model):
+    client_name  = models.CharField(max_length=50)
+    client_message = models.TextField()
+    testimonial_image = models.ImageField(upload_to='Testimonial-Images',validators=[validate_image_file_extension])
+    published_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.client_name
+
+    class Meta:
+        ordering = ['-published_at']
+
+
+
+class Team(models.Model):
+    photo=models.ImageField(upload_to='Team-Images',validators=[validate_image_file_extension])
+    name=models.CharField(max_length=100)
+    role=models.CharField(max_length=150)
+    joined_at=models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name

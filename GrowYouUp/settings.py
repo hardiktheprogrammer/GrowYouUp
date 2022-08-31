@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-=w9dgt^b4ou53@hx_7z3$nu64i_79w8-fai#xyapynyw3dz-(9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home.apps.HomeConfig',
-    'users.apps.UsersConfig',
 ]
 
 MIDDLEWARE = [
@@ -138,8 +137,6 @@ STATICFILES_DIRS= [
 MEDIA_URL = '/Data/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'Data')
 
-LOGIN_URL = 'users:login'
-LOGIN_REDIRECT_URL = 'index:index'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field

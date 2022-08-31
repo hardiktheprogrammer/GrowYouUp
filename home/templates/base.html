@@ -2,6 +2,11 @@
 <html class="no-js" lang="en">
 
 <head>
+    <style>
+        html{
+            scroll-behavior: smooth;
+        }
+    </style>
     {% load static %}
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,7 +17,7 @@
     <meta name="author" content="Themeland" />
 
     <!-- Title  -->
-    <title>Grow You Up | {% block title %}Homepage {% endblock title %}</title>
+    <title>Grow You Up | {% block title %}{% endblock title %}</title>
 
     <!-- Favicon  -->
     <link rel="icon" href="" />
@@ -100,54 +105,14 @@
                             <a class="nav-link" href="{% url 'index:index' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{% url 'index:about' %}" class="nav-link">About</a>
+                            <a href="#about" class="nav-link">About</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{% url 'index:services' %}" class="nav-link">Services</a>
+                            <a href="#services" class="nav-link">Services</a>
                         </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link" href="#">Go to Page <i class="fas fa-angle-down ml-1"></i></a>
-                            <ul class="dropdown-menu">
-                                <li class="nav-item">
-                                    <a href="{% url 'index:about' %}" class="nav-link">About Us</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{% url 'index:services' %}" class="nav-link">Our Services</a>
-                                </li>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link" href="#">Our Portfolio <i
-                                            class="fas fa-angle-right ml-1"></i></a>
-                                    <ul class="dropdown-menu">
-                                        <li class="nav-item">
-                                            <a href="{% url 'index:portfolio' %}" class="nav-link">Portfolio Minimal</a>
-                                        </li>
-                                
-                                    </ul>
-                                </li>
-                                <li class="nav-item">
-                                    <a href="{% url 'index:team' %}" class="nav-link">Our Team</a>
-                                </li>
-                               
-                                <li class="nav-item">
-                                    <a href="{% url 'index:contact' %}" class="nav-link">Contact</a>
-                                </li>
-                            </ul>
-                        </li>
+                       
                     </ul>
-                    <!-- Navbar Icons -->
-                    <ul class="navbar-nav icons">
-                        <li class="nav-item">
-                            <a href="#" class="nav-link" data-toggle="modal" data-target="#search">
-                                <i class="fas fa-search"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item social">
-                            <a href="#" class="nav-link"><i class="fab fa-facebook-f"></i></a>
-                        </li>
-                        <li class="nav-item social">
-                            <a href="#" class="nav-link"><i class="fab fa-twitter"></i></a>
-                        </li>
-                    </ul>
+                
 
                     <!-- Navbar Toggler -->
                     <ul class="navbar-nav toggle">
@@ -161,7 +126,7 @@
                     <!-- Navbar Action Button -->
                     <ul class="navbar-nav action">
                         <li class="nav-item ml-3">
-                            <a href="{% url 'index:contact' %}" class="btn ml-lg-auto btn-bordered-white"><i
+                            <a href="#contact" class="btn ml-lg-auto btn-bordered-white"><i
                                     class="fas fa-paper-plane contact-icon mr-md-2"></i>Contact Us</a>
                         </li>
                     </ul>
