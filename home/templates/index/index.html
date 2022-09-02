@@ -11,10 +11,10 @@
                         <div class="welcome-intro">
                             <h1 class="text-white text-center text-md-left">
                                  Grow You Up <br />
-                                <span class="fw-4"> a marketing chain agency</span>
+                                <span class="fw-4"> a technical <br> chain agency</span>
                             </h1>
                             <p class="text-white text-center text-md-left my-4">
-                               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae, vel.
+                                A agency to make all your dream work come into reality in the best and most affordable manner
                             </p>
                            
                         </div>
@@ -226,117 +226,41 @@
             <div class="container">
                 <h2 style="text-align: center;margin-bottom: 30px;">Our Portfolio</h2>
                 <div class="row">
+                    {% for query in portfolio %}
                     <div class="col-12 col-md-6 col-lg-4">
                         <!-- Single Case Studies -->
                         <div class="single-case-studies">
                             <!-- Case Studies Thumb -->
                             <a href="#">
-                                <img src="{% static 'assets/img/case_studies/case_studies_2/thumb_1.jpg' %}" alt="">
+
+                                <img src="{{query.project_image.url}}" alt="" style="height: 300px;width:500px;object-fit:cover;">
                             </a>
                             <!-- Case Studies Overlay -->
-                            <a href="google.com" target="_blank"  class="case-studies-overlay">
-                                <!-- Overlay Text -->
+                            {% if query.project_link %}
+                            <a href="{{query.project_link}}" target="_blank"  class="case-studies-overlay">
                                 <span class="overlay-text text-center p-3">
                                     <i class="fas fa-search-plus fa-2x text-white"></i>
-                                    <h3 class="text-white mt-2 mb-3">Web Design</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
+                                    <h3 class="text-white mt-2 mb-3">{{query.service_type}}</h3>
+                                    <p class="text-white">{{query.project_desc}}</p>
                                 </span>
                             </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="{% static 'assets/img/case_studies/case_studies_2/thumb_2.jpg' %}" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="google.com" target="_blank"  class="case-studies-overlay">
-                                <!-- Overlay Text -->
+                            {% else %}
+                            <a href="#" target="_blank"  class="case-studies-overlay">
                                 <span class="overlay-text text-center p-3">
                                     <i class="fas fa-search-plus fa-2x text-white"></i>
-                                    <h3 class="text-white mt-2 mb-3">App Development</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
+                                    <h3 class="text-white mt-2 mb-3">{{query.service_type}}</h3>
+                                    <p class="text-white">{{query.project_desc}}</p>
                                 </span>
                             </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="{% static 'assets/img/case_studies/case_studies_2/thumb_3.jpg' %}" alt="">
                             </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="google.com" target="_blank"  class="case-studies-overlay">
+
+                            {% endif %}
                                 <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <i class="fas fa-search-plus fa-2x text-white"></i>
-                                    <h3 class="text-white mt-2 mb-3">Data Analysis</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
-                                </span>
-                            </a>
+                              
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="{% static 'assets/img/case_studies/case_studies_2/thumb_4.jpg' %}" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="google.com" target="_blank"  class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <i class="fas fa-search-plus fa-2x text-white"></i>
-                                    <h3 class="text-white mt-2 mb-3">Content Management</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#">
-                                <img src="{% static 'assets/img/case_studies/case_studies_2/thumb_5.jpg' %}" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="google.com" target="_blank"  class="case-studies-overlay">
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <i class="fas fa-search-plus fa-2x text-white"></i>
-                                    <h3 class="text-white mt-2 mb-3">SEO Marketing</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Case Studies -->
-                        <div class="single-case-studies">
-                            <!-- Case Studies Thumb -->
-                            <a href="#" target="_blank">
-                                <img src="{% static 'assets/img/case_studies/case_studies_2/thumb_6.jpg' %}" alt="">
-                            </a>
-                            <!-- Case Studies Overlay -->
-                            <a href="google.com" target="_blank"  class="case-studies-overlay">
-                            
-                                <!-- Overlay Text -->
-                                <span class="overlay-text text-center p-3">
-                                    <i class="fas fa-search-plus fa-2x text-white"></i>
-                                    <h3 class="text-white mt-2 mb-3">Marketing Strategy</h3>
-                                    <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            
+                    {% endfor %}
+                </div>            
             </div>
         </section>
         <!-- portfolio area end -->
@@ -349,9 +273,7 @@
                         <div class="section-heading text-center">
                             <h2>We provide the best and imaginative services</h2>
                             <p class="d-none d-sm-block mt-4">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                Laborum obcaecati dignissimos quae quo ad iste ipsum officiis
-                                deleniti asperiores sit.
+                                We will provide you with 24/7 support and the best output of our service.
                             </p>
                             <p class="d-block d-sm-none mt-4">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -367,10 +289,8 @@
                             <span class="flaticon-rocket-launch color-1 icon-bg-1"></span>
                             <h3 class="my-3">Boast Your Business</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed
-                                do eiusmod tempor incididunt emit.
+                                We are presenting you with the service of business boosting with great ideas, tips, or tricks and with prior experience.
                             </p>
-                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -379,10 +299,8 @@
                             <span class="flaticon-monitoring color-2 icon-bg-2"></span>
                             <h3 class="my-3">Website Growth</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed
-                                do eiusmod tempor incididunt emit.
+                                We will help you to grow your website with a strong user base.
                             </p>
-                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -391,10 +309,8 @@
                             <span class="flaticon-web color-3 icon-bg-3"></span>
                             <h3 class="my-3">Seo Ranking</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed
-                                do eiusmod tempor incididunt emit.
+                                We will help you to rank your website #1 with our best seo workers. 
                             </p>
-                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -403,10 +319,8 @@
                             <span class="flaticon-smartphone color-4 icon-bg-4"></span>
                             <h3 class="my-3">App Development</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed
-                                do eiusmod tempor incididunt emit.
+                                We will provide you with the application development facility or service where we will be creating applications for you.
                             </p>
-                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -415,10 +329,8 @@
                             <span class="flaticon-email color-5 icon-bg-5"></span>
                             <h3 class="my-3">Email Marketing</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed
-                                do eiusmod tempor incididunt emit.
+                                We will be promoting your startups, websites, and businesses via email.
                             </p>
-                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
                     <div class="col-12 col-md-6 col-lg-4">
@@ -427,10 +339,8 @@
                             <span class="flaticon-affiliate color-6 icon-bg-6"></span>
                             <h3 class="my-3">Affiliate Marketing</h3>
                             <p>
-                                Lorem ipsum dolor sit amet, consectet ur adipisicing elit, sed
-                                do eiusmod tempor incididunt emit.
+                                We will be promoting your startups, websites, and businesses via collaborations.
                             </p>
-                            <a class="service-btn mt-3" href="#">Learn More</a>
                         </div>
                     </div>
                 </div>
@@ -504,62 +414,29 @@
 
         <div class="container">
             <h2 style="text-align: center;margin-bottom:40px">Testimonials</h2>
-            <div class="row">                
+            <div class="row">    
+                {% for query2 in testimonial %}            
                 <div class="col-12 col-md-6 col-lg-4">
+
                     <!-- Single Case Studies -->
+
                     <div class="single-case-studies">
                         <!-- Case Studies Thumb -->
                         <a href="#">
-                            <img src="{% static 'assets/img/case_studies/case_studies_2/thumb_4.jpg' %}" alt="">
+                            <img src="{{query2.testimonial_image.url}}" alt="" style="height: 300px;width:500px;object-fit:cover;">
                         </a>
                         <!-- Case Studies Overlay -->
-                        <a href="" target="_blank"  class="case-studies-overlay">
+                        <a href="#" target="_blank"  class="case-studies-overlay"  >
                             <!-- Overlay Text -->
                             <span class="overlay-text text-center p-3">
                                 <i class="fas fa-comment fa-2x text-white"></i>
-                                <h3 class="text-white mt-2 mb-3">Yasmin Akter</h3>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
+                                <h3 class="text-white mt-2 mb-3">{{query2.client_name}}</h3>
+                                <p class="text-white">{{query2.client_message}}</p>
                             </span>
-                        </a>
+                       </a>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Case Studies -->
-                    <div class="single-case-studies">
-                        <!-- Case Studies Thumb -->
-                        <a href="#">
-                            <img src="{% static 'assets/img/case_studies/case_studies_2/thumb_5.jpg' %}" alt="">
-                        </a>
-                        <!-- Case Studies Overlay -->
-                        <a href="" target="_blank"  class="case-studies-overlay">
-                            <!-- Overlay Text -->
-                            <span class="overlay-text text-center p-3">
-                                <i class="fas fa-comment fa-2x text-white"></i>
-                                <h3 class="text-white mt-2 mb-3">Yasmin Akter</h3>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
-                            </span>
-                        </a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <!-- Single Case Studies -->
-                    <div class="single-case-studies">
-                        <!-- Case Studies Thumb -->
-                        <a href="#" target="_blank">
-                            <img src="{% static 'assets/img/case_studies/case_studies_2/thumb_6.jpg' %}" alt="">
-                        </a>
-                        <!-- Case Studies Overlay -->
-                        <a href="" target="_blank"  class="case-studies-overlay">
-                        
-                            <!-- Overlay Text -->
-                            <span class="overlay-text text-center p-3">
-                                <i class="fas fa-comment fa-2x text-white"></i>
-                                <h3 class="text-white mt-2 mb-3">Yasmin Akter</h3>
-                                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, eligendi pariatur corporis libero distinctio, corrupti.</p>
-                            </span>
-                        </a>
-                    </div>
-                </div>
+                {% endfor %}
             </div>
         </div>
 
@@ -578,108 +455,30 @@
                         <!-- Section Heading -->
                         <div class="section-heading text-center">
                             <h2>Our Experts</h2>
-                            <p class="d-none d-sm-block mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati dignissimos quae quo ad iste ipsum officiis deleniti asperiores sit.</p>
-                            <p class="d-block d-sm-none mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum obcaecati.</p>
+                            <p class="d-none d-sm-block mt-4">We have the best experts to guide you for startups and businesses.
+                            </p>
                         </div>
                     </div>
                 </div>
                 <div class="row">
+                    {% for query3 in team %}
                     <div class="col-12 col-md-6 col-lg-4">
                         <!-- Single Team -->
                         <div class="single-team">
                             <!-- Team Photo -->
                             <div class="team-photo">
-                                <a href="#"><img src="{% static 'assets/img/team/thumb_1.jpg' %}" alt=""></a>
+                                <a href="#"><img src="{{query3.photo.url}}" alt=""></a>
                             </div>
                             <!-- Team Content -->
                             <div class="team-content p-3">
                                 <a href="#">
-                                    <h3 class="mb-2">Junaid Hasan</h3>
+                                    <h3 class="mb-2">{{query3.name}}</h3>
                                 </a>
-                                <h5 class="text-uppercase">Marketing Officer</h5>
+                                <h5 class="text-uppercase">{{query3.role}}</h5>
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Team -->
-                        <div class="single-team">
-                            <!-- Team Photo -->
-                            <div class="team-photo">
-                                <a href="#"><img src="{% static 'assets/img/team/thumb_2.jpg' %}" alt=""></a>
-                            </div>
-                            <!-- Team Content -->
-                            <div class="team-content p-3">
-                                <a href="#">
-                                    <h3 class="mb-2">Yasmin Akter</h3>
-                                </a>
-                                <h5 class="text-uppercase">SEO Expert</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Team -->
-                        <div class="single-team">
-                            <!-- Team Photo -->
-                            <div class="team-photo">
-                                <a href="#"><img src="{% static 'assets/img/team/thumb_3.jpg' %}" alt=""></a>
-                            </div>
-                            <!-- Team Content -->
-                            <div class="team-content p-3">
-                                <a href="#">
-                                    <h3 class="mb-2">Md. Arham</h3>
-                                </a>
-                                <h5 class="text-uppercase">Media Controller</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Team -->
-                        <div class="single-team">
-                            <!-- Team Photo -->
-                            <div class="team-photo">
-                                <a href="#"><img src="{% static 'assets/img/team/thumb_4.jpg' %}" alt=""></a>
-                            </div>
-                            <!-- Team Content -->
-                            <div class="team-content p-3">
-                                <a href="#">
-                                    <h3 class="mb-2">Jassica William</h3>
-                                </a>
-                                <h5 class="text-uppercase">Data Analyst</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Team -->
-                        <div class="single-team">
-                            <!-- Team Photo -->
-                            <div class="team-photo">
-                                <a href="#"><img src="{% static 'assets/img/team/thumb_5.jpg' %}" alt=""></a>
-                            </div>
-                            <!-- Team Content -->
-                            <div class="team-content p-3">
-                                <a href="#">
-                                    <h3 class="mb-2">John Doe</h3>
-                                </a>
-                                <h5 class="text-uppercase">Web Developer</h5>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-md-6 col-lg-4">
-                        <!-- Single Team -->
-                        <div class="single-team">
-                            <!-- Team Photo -->
-                            <div class="team-photo">
-                                <a href="#"><img src="{% static 'assets/img/team/thumb_6.jpg' %}" alt=""></a>
-                            </div>
-                            <!-- Team Content -->
-                            <div class="team-content p-3">
-                                <a href="#">
-                                    <h3 class="mb-2">Sara Scotch</h3>
-                                </a>
-                                <h5 class="text-uppercase">Graphic Designer</h5>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
             <!-- Shape Bottom -->
@@ -716,7 +515,7 @@
                                 <li class="contact-info color-1 bg-hover active hover-bottom text-center p-5 m-3">
                                     <span><i class="fas fa-mobile-alt fa-3x"></i></span>
                                     <a class="d-block my-2" href="#">
-                                        <h3>+89 (0) 2354 5470091</h3>
+                                        <h3>+91 8349811004</h3>
                                     </a>
                                     <p>
                                         Lorem ipsum dolor sit amet, consectetur adipisicing elit.
@@ -742,7 +541,8 @@
                         <!-- Contact Box -->
                         <div class="contact-box text-center">
                             <!-- Contact Form -->
-                            <form id="contact-form" method="POST" action="">
+                            <form  method="POST">
+                                {% csrf_token %}
                                 <div class="row">
                                     <div class="col-12">
                                         <div class="form-group">
@@ -750,7 +550,7 @@
                                                 required="required" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="cname"
+                                            <input type="text" class="form-control" name="company_name"
                                                 placeholder="Company Name" required="required" />
                                         </div>
                                         <div class="form-group">
@@ -758,7 +558,7 @@
                                                 required="required" />
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" name="subject" placeholder="Phone"
+                                            <input type="text" class="form-control" name="phone" placeholder="Phone"
                                                 required="required" />
                                         </div>
                                     </div>
