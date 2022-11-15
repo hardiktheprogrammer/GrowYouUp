@@ -1,12 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect
 from django.urls import reverse
+from django.core.mail import send_mail
 from django.contrib import messages
-from ratelimit.decorators import ratelimit
 from .models import Contact, Portfolio, Team, Testimonial
 
-
-@ratelimit(key='ip',rate='5/d',method=['POST'],block=True)
 def index(request):
     portfolio = Portfolio.objects.all().order_by('-time')[0:6]
     testimonial = Testimonial.objects.all().order_by('-published_at')[0:3]
@@ -25,6 +23,18 @@ def index(request):
             return HttpResponseRedirect(reverse('index:index'))
         entry = Contact(name=name,company_name=company_name,email=email,phone=phone,message=message)
         entry.save()
+        data={
+            'name':name,
+            'company_name':company_name,
+            'email':email,
+            'phone':phone,
+            'message':message
+        }
+        message='''
+        New Order : {}
+        from : {}
+        '''.format(data['message'],data['email'])
+        send_mail(data['company_name'],message,'',['growyouup007@gmail.com'],fail_silently=False)
         messages.success(request,'Thanks for contacting,our team will connect with you soon!')
         return HttpResponseRedirect(reverse('index:index'))
     return render(request,'index/index.html',{'portfolio':portfolio,'testimonial':testimonial,'team':team})

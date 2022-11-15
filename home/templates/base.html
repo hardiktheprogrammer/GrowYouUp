@@ -17,10 +17,10 @@
     <meta name="author" content="Themeland" />
 
     <!-- Title  -->
-    <title>Grow You Up | {% block title %}{% endblock title %}</title>
+    <title>GrowYouUp | {% block title %}{% endblock title %} </title>
 
     <!-- Favicon  -->
-    <link rel="icon" href="" />
+    <link rel="icon" type="image/x-icon" href="{% static 'assets/css/img/favicon.ico' % }" />
 
     <!-- ***** All CSS Files ***** -->
 
@@ -34,6 +34,16 @@
 
 
 <body class="homepage-3">
+    {% if messages %}
+    <center>
+        <div style="background-color: lime;margin-bottom: 12px;text-align: center;width: 90%;border-radius: 5px;">
+            {% for msg in messages %}
+            <p style="color:black; font-size: 23px;padding: 10px;margin: 10px;text-align:center;">{{msg}}</p>
+            {% endfor %}
+        </div>
+    </center>
+    
+    {% endif %}
     <!--====== Preloader Area Start ======-->
     <div id="preloader">
         <!-- Digimax Preloader -->
@@ -88,16 +98,17 @@
     <!--====== Scroll To Top Area End ======-->
 
     <div class="main overflow-hidden">
+        
         <!-- ***** Header Start ***** -->
         <header id="header">
             <!-- Navbar -->
             <nav data-aos="zoom-out" data-aos-delay="800" class="navbar navbar-expand">
                 <div class="container header">
                     <!-- Navbar Brand-->
-                    <a class="navbar-brand" href="/">
-                        <img class="navbar-brand-regular" src="{% static 'assets/img/3.jpg' %}" width="120" height="50" alt="brand-logo" />
-                        <img class="navbar-brand-sticky" src="{% static 'assets/img/3.jpg' %}" width="120" height="50" alt="sticky brand-logo" />
-                    </a>
+                    <!-- <a class="navbar-brand" href="/">
+                        <img class="navbar-brand-regular" src="{% static 'assets/img/3.jpg' %}" width="120" height="240" alt="brand-logo" />
+                        <img class="navbar-brand-sticky" src="{% static 'assets/img/3.jpg' %}" width="120" height="240" alt="sticky brand-logo" />
+                    </a> -->
                     <div class="ml-auto"></div>
                     <!-- Navbar -->
                     <ul class="navbar-nav items">
@@ -110,7 +121,6 @@
                         <li class="nav-item">
                             <a href="#services" class="nav-link">Services</a>
                         </li>
-                       
                     </ul>
                 
 
@@ -135,14 +145,10 @@
         </header>
         <!-- ***** Header End ***** -->
         <!-- ***** Breadcrumb Area End ***** -->
-        {% if messages %}
-        <div style="background-color: lime;margin-bottom: 2px;">
-            {% for msg in messages %}
-            <p style=" font-size: 23px;padding: 10px;">{{msg}}</p>
-            {% endfor %}
-        </div>
-        {% endif %}
-        {% block body %} {% endblock body %}
+       
+        {% block body %}
+       
+        {% endblock body %}
 
 
                 <!--====== Footer Area Start ======-->

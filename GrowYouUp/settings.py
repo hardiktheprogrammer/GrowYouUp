@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-=w9dgt^b4ou53@hx_7z3$nu64i_79w8-fai#xyapynyw3dz-(9'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -74,10 +74,10 @@ WSGI_APPLICATION = 'GrowYouUp.wsgi.application'
 DATABASES={
    'default':{
       'ENGINE':'django.db.backends.postgresql_psycopg2',
-      'NAME':'GrowYouUp',
+      'NAME':'growyouup',
       'USER':'postgres',
-      'PASSWORD':'Iamreal123',
-      'HOST':'localhost',
+      'PASSWORD':'vishnuaryan123',
+      'HOST':'growyouup.cikzth9mtbmm.us-east-1.rds.amazonaws.com',
       'PORT':'5432',
    }
 }
@@ -130,9 +130,10 @@ USE_TZ = True
 import os
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS= [
+"""STATICFILES_DIRS= [
     os.path.join(BASE_DIR,'static')
-]
+]"""
+STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 MEDIA_URL = '/Data/'
 MEDIA_ROOT = os.path.join(BASE_DIR,'Data')
@@ -142,3 +143,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR,'Data')
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'growyouup007@gmail.com'
+EMAIL_HOST_PASSWORD = 'ghwowigmfwgdwsai'
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
